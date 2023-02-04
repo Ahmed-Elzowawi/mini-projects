@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Digital clock</title>
+		<link rel="stylesheet" href="main.css" />
+	</head>
+	<body>
+		<div class="date-and-time">
+			<p id="dayMonthYear"></p>
+			<p id="clock"></p>
+		</div>
+		<script>
+			const setClock = () => {
+				if (new Date().getHours() === 0) setDate();
+				const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+				const currentTime = new Date().toLocaleTimeString('en-us', options);
+
+				const clock = document.getElementById("clock");
+				clock.textContent = currentTime;
+				setTimeout(setClock, 1000);
+			}
+
+			const setDate = () => {
+				const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+				const currentDate = new Date().toLocaleDateString('en-us', options);
+
+				const dayMonthYear = document.getElementById("dayMonthYear");
+				dayMonthYear.textContent = currentDate;
+			}
+			setTimeout(setDate);
+			setTimeout(setClock);
+		</script>
+	</body>
+</html>
