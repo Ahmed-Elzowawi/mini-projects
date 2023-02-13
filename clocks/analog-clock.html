@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Analog clock</title>
+	<link rel="stylesheet" href="./analog-clock.css">
+</head>
+<body>
+	<div class="clock">
+		<div class="main-line"></div>
+		<div class="sec-line line-one"></div>
+		<div class="sec-line line-two"></div>
+		<div class="sec-line line-three"></div>
+		<div class="sec-line line-four"></div>
+		<div class="large-circle"></div>
+		<div class="small-circle"></div>
+		<div id="hour"></div>
+		<div id="min"></div>
+		<div id="sec"></div>
+	</div>
+</body>
+<script>
+	const hourElement = document.getElementById("hour");
+	const minElement = document.getElementById("min");
+	const secElement = document.getElementById("sec");
+	setInterval(() => {
+		currentDate = new Date();
+		const hour = currentDate.getHours();
+		const min = currentDate.getMinutes();
+		const sec = currentDate.getSeconds();
+
+		hourElement.style.transform = `rotate(${30 * hour + min / 2}deg)`;
+		minElement.style.transform = `rotate(${6 * min}deg)`;
+		secElement.style.transform = `rotate(${6 * sec}deg)`;
+	}, 1000);
+</script>
+</html>

@@ -1,0 +1,117 @@
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	color: black;
+	background-color: white;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.clock {
+	width: 300px;
+	height: 300px;
+	border: 8px solid black;
+	border-radius: 50%;
+	position: relative;
+}
+
+.main-line {
+	background-color: cyan;
+	width: 5px;
+	height: 100%;
+	margin-inline: auto;
+}
+
+.main-line::after {
+	content: '';
+	display: block;
+	background-color: cyan;
+	width: 5px;
+	height: 100%;
+	transform: rotate(90deg);
+}
+
+.sec-line {
+	background-color: grey;
+	width: 2px;
+	height: 100%;
+	position: absolute;
+	inset: 0;
+	margin: auto;
+}
+
+.line-one {
+	transform: rotate(30deg);
+}
+.line-two {
+	transform: rotate(60deg);
+}
+.line-three {
+	transform: rotate(120deg);
+}
+.line-four {
+	transform: rotate(150deg);
+}
+
+.large-circle {
+	background-color: white;
+	width: 85%;
+	height: 85%;
+	border-radius: 50%;
+	position: absolute;
+	inset: 0;
+	margin: auto;
+}
+
+.small-circle {
+	background-color: black;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	position: absolute;
+	inset: 0;
+	margin: auto;
+	z-index: 2;
+}
+
+#hour {
+	background-color: black;
+	width: 7px;
+	height: 18%;
+	position: absolute;
+	inset: 0;
+	margin: auto auto 50%;
+	border-radius: 999px;
+	transform-origin: bottom;
+
+}
+
+#min {
+	background-color: black;
+	width: 4px;
+	height: 33%;
+	position: absolute;
+	inset: 0;
+	margin: auto auto 50%;
+	border-radius: 999px;
+	transform-origin: bottom;
+}
+
+#sec {
+	background-color: black;
+	width: 2px;
+	height: 45%;
+	position: absolute;
+	inset: 0;
+	margin: auto auto 50%;
+	border-radius: 999px;
+	transform-origin: bottom;
+}
