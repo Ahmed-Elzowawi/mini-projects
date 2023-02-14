@@ -1,2 +1,7 @@
 # How the project looks like
-![Screen shot of how the project looks like](Screen-shot-of-the-project.png)
+
+## Digital clock
+![Screen shot of the digital clock](assets/digital-clock.png)
+
+## Analog clock
+![Screen shot of the analog clock](assets/analog-clock.png)
