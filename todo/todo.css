@@ -38,11 +38,43 @@ button {
 	border-radius: 8px;
 	margin-top: 14px;
 	font-size: 16px;
+	cursor: pointer;
 }
 
 .item {
-	padding: 10px 20px;
-	margin-top: 16px;
+	position: relative;
+	padding: 10px 68px 10px 20px;
+	margin-top: 24px;
 	border: 2px solid black;
 	border-radius: 4px;
+}
+
+.btn {
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	top: 0;
+	right: 4px;
+	bottom: 0;
+	margin-block: auto;
+	cursor: pointer;
+}
+
+.btn:before,
+.btn:after {
+	content: "";
+	width: 2px;
+	height: 24px;
+	margin: auto;
+	background-color: red;
+	position: absolute;
+	inset: 0;
+}
+
+.btn:before {
+	transform: rotate(45deg);
+}
+
+.btn:after {
+	transform: rotate(-45deg);
 }
