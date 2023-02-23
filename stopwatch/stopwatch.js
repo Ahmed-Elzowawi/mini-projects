@@ -17,7 +17,6 @@ const startTimer = () => {
 		if(tens === 60) {
 			tens = 0;
 			++sec;
-			secElement.textContent = sec < 10 ? '0' + sec : sec + '';
 		}
 		tensElement.textContent = tens < 10 ? '0' + tens : tens;
 
@@ -26,6 +25,7 @@ const startTimer = () => {
 			++min;
 			minElement.textContent = min < 10 ? '0' + min : min + '';
 		}
+		secElement.textContent = sec < 10 ? '0' + sec : sec + '';
 	}, 10);
 };
 
